@@ -1,0 +1,77 @@
+<div class="birthday-container">
+  <!-- Close Button -->
+  <!-- <button *ngIf="showCloseButton" class="close-button" (click)="closePage()">
+    Close
+  </button> -->
+
+  <!-- Title -->
+  <div class="title">
+    <h1>Happy Birthday, My Dearest Adunni!!! 💖💖💖</h1>
+  </div>
+
+  <!-- Slideshow Container -->
+  <div class="slideshow-container">
+    <div class="slideshow-wrapper">
+      <img 
+        [src]="images[currentImageIndex]" 
+        [alt]="'Birthday Image ' + (currentImageIndex + 1)" 
+        class="slideshow-image"
+        (error)="onImageError($event)">
+
+    </div>
+  </div>
+
+  <!-- Messages Grid Container -->
+  <div class="messages-grid-container">
+    <h2 class="grid-title">Birthday Wishes from Your Loved Ones 💝</h2>
+    
+    <!-- Hubby's Special Message -->
+    <div class="hubby-message-container" (click)="openHubbyMessage()">
+      <div class="hubby-message">
+        <div class="hubby-header">
+          <span class="hubby-label">💑 From Your Hubby</span>
+          <span class="click-hint">Click to read full message →</span>
+        </div>
+        <div class="hubby-preview">
+          "Happy birthday to the love of my life, my best friend, my greatest supporter, and the most beautiful woman in the world..."
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Messages Grid -->
+    <div class="messages-grid">
+      <div 
+        *ngFor="let message of messages" 
+        class="message-card"
+        [class.hubby-card]="message.isHubby"
+        [class.other-card]="!message.isHubby">
+        
+        <div class="message-header">
+          <div class="sender-name">{{ message.sender }}</div>
+          <div class="heart-icon" *ngIf="message.hasHeart">💖</div>
+        </div>
+        
+        <div class="message-content">
+          <p class="message-text">{{ message.text.length > 150 ? (message.text | slice:0:150) + '...' : message.text }}</p>
+        </div>
+        
+        <div class="message-footer">
+          <span class="read-more" *ngIf="message.text.length > 150" (click)="openMessageModal(message)">Read more</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message Modal -->
+  <div class="modal-overlay" *ngIf="showModal" (click)="closeMessageModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title">💖 From {{ selectedMessage?.sender }}</h3>
+        <button class="modal-close" (click)="closeMessageModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-message">{{ selectedMessage?.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>

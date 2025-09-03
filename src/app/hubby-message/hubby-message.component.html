@@ -1,0 +1,104 @@
+<div class="birthday-container">
+  <!-- Close Button -->
+  <button *ngIf="showCloseButton" class="close-button" (click)="closePage()">
+    Close
+  </button>
+
+  <!-- Back Button -->
+  <button class="back-button" (click)="goBack()">
+    ← Back to All Messages
+  </button>
+
+  <!-- Title -->
+  <div class="title">
+    <h1>💑 From Your Loving Hubby 💑</h1>
+  </div>
+
+  <!-- Slideshow Container -->
+  <div class="slideshow-container">
+    <div class="slideshow-wrapper">
+      <img 
+        [src]="images[currentImageIndex]" 
+        [alt]="'Birthday Image ' + (currentImageIndex + 1)" 
+        class="slideshow-image"
+        (error)="onImageError($event)">
+
+    </div>
+  </div>
+
+  <!-- Content Container -->
+  <div class="content-container">
+    <!-- Message 1 -->
+    <div class="message-wrapper">
+      <div class="message-number-above">1</div>
+      <div class="message-block">
+        <div class="message-text">
+          Happy birthday to the love of my life, my best friend, my greatest supporter, and the most beautiful woman in the world — inside and out. Today, as I celebrate you, I find myself overflowing with gratitude, not just because it's your special day, but because every single day of my life is special with you in it. 💖
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Message 3 -->
+    <div class="message-wrapper">
+      <div class="message-number-above">2</div>
+      <div class="message-block">
+        <div class="message-text">
+          From the very beginning, you have been my anchor through life's storms and my sunshine through the brightest days. You've stood with me through the highs and the lows, never once wavering, never once giving up on me. Your patience, your understanding, and your quiet strength have carried me in ways words can hardly describe. 💖
+        </div>
+      </div>
+    </div>
+
+    <!-- Message 4 -->
+    <div class="message-wrapper">
+      <div class="message-number-above">3</div>
+      <div class="message-block">
+        <div class="message-text">
+          I look at our two wonderful boys, and I see your heart in them. I see the love, the sacrifice, the prayers, and the endless care you pour into raising them. You are not just a mother; you are a nurturer, a guide, and a living example of what love and devotion should look like. 💖
+        </div>
+      </div>
+    </div>
+
+    <!-- Message 5 -->
+    <div class="message-wrapper">
+      <div class="message-number-above">4</div>
+      <div class="message-block">
+        <div class="message-text">
+          For me, you have been everything. You are my biggest cheerleader, the one who believes in me even when I struggle to believe in myself. You remind me of my strength when I feel weak, and you constantly push me to reach higher, to dream bigger, and to never give up. 💖
+        </div>
+      </div>
+    </div>
+
+    <!-- Message 6 -->
+    <div class="message-wrapper">
+      <div class="message-number-above">5</div>
+      <div class="message-block">
+        <div class="message-text">
+          Thank you for your love — steady, deep, and unwavering. Thank you for your patience — the kind that only comes from a heart full of grace. Thank you for your prayers — I know that many blessings in my life are because you prayed them into existence. 💖
+        </div>
+      </div>
+    </div>
+
+    <!-- Message 7 -->
+    <div class="message-wrapper">
+      <div class="message-number-above">6</div>
+      <div class="message-block">
+        <div class="message-text">
+          You are my safe place, my partner, my best friend, my confidant, my queen. You are the song in my heart and the reason I smile even on tough days. Life with you is a gift I never want to take for granted. I love you more than words could ever capture. 💖
+        </div>
+      </div>
+    </div>
+
+    <!-- Message 8 -->
+    <div class="message-wrapper">
+      <div class="message-number-above">7</div>
+      <div class="message-block">
+        <div class="message-text">
+          So today, my love, I celebrate you. I celebrate your life, your strength, your beauty, your kindness, and the blessing that you are to me and to everyone who knows you. May this new year bring you joy beyond measure, peace in every area of your life, and blessings so abundant that your heart overflows with gratitude. 💖
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
